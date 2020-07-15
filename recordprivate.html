@@ -5,35 +5,19 @@
 		<title></title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
 		<script>
-			function getLanguage()
-    {
-        if (navigator.appName == 'Netscape')
-        var language = navigator.language;
-        else
-        var language = navigator.browserLanguage;
-        if (language.indexOf('en') > -1) document.write('english');
-        else if (language.indexOf('nl') > -1) document.write('dutch');
-        else if (language.indexOf('fr') > -1) document.write('french');
-        else if (language.indexOf('de') > -1) document.write('german');
-        else if (language.indexOf('ja') > -1) document.write('japanese');
-        else if (language.indexOf('it') > -1) document.write('italian');
-        else if (language.indexOf('pt') > -1) document.write('portuguese');
-        else if (language.indexOf('es') > -1) document.write('Spanish');
-        else if (language.indexOf('sv') > -1) document.write('swedish');
-        else if (language.indexOf('zh') > -1) document.write('chinese');
-        else
-        document.location.href = 'english';
-    }
+	
+			function copyText(){
+				document.getElementById("field2").value = document.getElementById("field1").value;
+			}
+			
 		</script>
 	
 	</head>
 	<body>
 		
-		 <form id="form1" runat="server">
-    <div>
-        <input id="Button1" type="button" value="点击" οnclick="getLanguage()" /></div>
-    </form>
-		
+		 Field1: <input type="text" id="field1" value="Hello World!"><br>
+		 Field2: <input type="text" id="field2"><br><br>
+		 <button onclick="copyText()">复制文本</button>
 		
 	</body>
 </html>
